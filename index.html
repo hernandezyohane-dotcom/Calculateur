@@ -184,7 +184,7 @@ $("go").onclick=function(){
   var job=parseFloat($("job").value),sess=parseFloat(st.sess),dur=parseInt($("dur").value,10),int=parseFloat($("int").value),heat=parseInt(st.heat,10);
   /* dépense : métabolisme de base + métier + sport hebdo lissé sur 7 jours (identique à YH TrackApp) */
   var bmr=10*w+6.25*h-5*a+(st.sex==="h"?5:-161),daily=bmr*job-bmr,sport=sess*(dur/60)*(int-1)*w/7,tdee=bmr+daily+sport;
-  var k=tdee;if(st.goal==="loss")k*=0.8;if(st.goal==="gain")k*=1.1;k=Math.round(k/10)*10;
+  var k=tdee;if(st.goal==="loss")k*=0.8;if(st.goal==="gain")k*=1.1;k=Math.round(k/10)*10;if(st.goal==="loss"&&k<bmr)k=Math.ceil(bmr/10)*10;
   /* protéines : g/kg selon le nombre de séances et l'objectif ; sur la masse maigre si le taux de masse grasse est connu. Lipides : 25 % des calories (identique à YH TrackApp) */
   var gk=sess===0?1.2:sess<=1.5?1.4:sess<=3.5?1.6:1.8;if(st.goal==="loss")gk+=0.4;if(st.goal==="gain")gk+=0.2;gk=Math.min(2.2,r1(gk));
   var bf=num("bf"),lbm=bf>=3&&bf<=60?w*(1-bf/100):0,gl=r1(gk/0.85);
@@ -195,7 +195,7 @@ $("go").onclick=function(){
   $("p").textContent=p;$("c").textContent=c;$("f").textContent=f;
   var tot=p*4+c*4+f*9||1;$("bp").style.width=(p*4/tot*100)+"%";$("bc").style.width=(c*4/tot*100)+"%";$("bf").style.width=(f*9/tot*100)+"%";
   $("kdet").innerHTML=kv("Métabolisme de base",r0(bmr)+" kcal")+kv("Métier / quotidien","+ "+r0(daily)+" kcal")+kv("Sport (moyenne par jour)","+ "+r0(sport)+" kcal")+
-    kv("Dépense totale",Math.round(tdee/10)*10+" kcal",st.goal==="keep")+(st.goal!=="keep"?kv(st.goal==="loss"?"Déficit perte de poids (−20 %)":"Surplus prise de muscle (+10 %)",k+" kcal",1):"");
+    kv("Dépense totale",Math.round(tdee/10)*10+" kcal",st.goal==="keep")+(st.goal!=="keep"?kv(st.goal==="loss"?(k<=Math.ceil(bmr/10)*10&&tdee*0.8<bmr?"Perte de poids (plancher : métabolisme de base)":"Déficit perte de poids (−20 %)"):"Surplus prise de muscle (+10 %)",k+" kcal",1):"");
   /* eau : base selon le poids + métier + chaleur + sport moyen */
   var wb=w*0.03,wj={"1.2":0,"1.35":0.25,"1.5":0.5,"1.7":1}[$("job").value],hm={"1.2":0.5,"1.35":0.75,"1.5":1,"1.7":1.5}[$("job").value],
       wh=[0,0.3,0.7][heat]*hm,ws=sess*(dur/60)*({"4":0.4,"6":0.6,"8":0.9}[$("int").value])/7,wt=r1(wb)+r1(wj)+r1(wh)+r1(ws);
