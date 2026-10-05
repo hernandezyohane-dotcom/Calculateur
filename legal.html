@@ -45,9 +45,10 @@ ul{padding-left:20px}
     TVA non applicable, art. 293 B du CGI<br>
     Directeur de la publication : Yohane Hernandez</p>
     <h3>Hébergement</h3>
-    <p>Site et application : GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.<br>
+    <p>Application (app.yhnutrition.fr) : Cloudflare, Inc. (Cloudflare Pages), 101 Townsend Street, San Francisco, CA 94107, États-Unis.<br>
+    Comptes et données des utilisateurs : Supabase Inc., 970 Toa Payoh North #07-04, Singapour 318992 ; serveurs situés en Irlande (Union européenne).<br>
+    Calculateur (yhnutrition.fr) : GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.<br>
     Nom de domaine et messagerie : IONOS SARL, 7 place de la Gare, BP 70109, 57201 Sarreguemines Cedex, France.</p>
-    <p class="mu">Si l'hébergement change (Cloudflare Pages, Netlify…), mettre à jour ce paragraphe.</p>
     <h3>Propriété intellectuelle</h3>
     <p>La marque « YH TrackApp » (dépôt INPI n° 5304073), le nom « YH Nutrition », le logo, le code de l'application, les textes, les méthodes de calcul présentées, les plans générés et la mise en page sont la propriété exclusive de l'éditeur. Toute reproduction, copie, adaptation ou diffusion, totale ou partielle, sans autorisation écrite est interdite.</p>
     <h3>Données nutritionnelles</h3>
@@ -82,25 +83,41 @@ ul{padding-left:20px}
   <section class="card" id="confidentialite">
     <h2>3. Politique de confidentialité</h2>
     <h3>En résumé</h3>
-    <p><b>Dans la version actuelle, nous ne collectons aucune donnée personnelle.</b> Tout ce que tu saisis (profil, poids, masse grasse, repas, eau, séances, favoris, pesées) reste enregistré <b>uniquement sur ton téléphone</b>, dans le stockage local de ton navigateur. Nous n'y avons pas accès. Pas de compte, pas de publicité, pas de cookie de suivi, pas d'outil de mesure d'audience.</p>
+    <p>Pour utiliser l'appli, tu crées un compte avec ton adresse e-mail (sans mot de passe : tu reçois un code). Ton profil et ton journal sont <b>sauvegardés sur ton compte</b>, sur des serveurs situés <b>dans l'Union européenne</b>, pour que tu les retrouves sur n'importe quel téléphone. Seul toi y as accès depuis l'appli. Pas de publicité, pas de revente de données, pas de cookie de suivi, pas d'outil de mesure d'audience.</p>
     <p>Le calculateur de yhnutrition.fr fait ses calculs directement dans ton navigateur et n'enregistre rien.</p>
-    <h3>Données sensibles</h3>
-    <p>Le poids, la masse grasse et l'alimentation peuvent être considérés comme des données de santé. C'est pour cette raison qu'elles restent sur ton appareil.</p>
+    <h3>Données collectées et pourquoi</h3>
+    <ul>
+      <li><b>Compte</b> : ton adresse e-mail et la date de création du compte, pour te connecter et te contacter au sujet de ton compte ou de ton abonnement.</li>
+      <li><b>Contenu de l'appli</b> : profil (sexe, âge, taille, poids, masse grasse, métier, sport, objectif), journal (repas, eau, pas, séances), pesées, aliments et recettes créés, favoris. Uniquement pour faire fonctionner l'appli et synchroniser tes appareils.</li>
+      <li><b>Abonnement Premium</b> : formule, statut et date de renouvellement, transmis par Stripe. Tes données de carte bancaire sont traitées par Stripe et ne passent jamais par nous.</li>
+    </ul>
+    <h3>Données sensibles et consentement</h3>
+    <p>Le poids, la masse grasse et l'alimentation peuvent être considérés comme des données de santé. Nous ne les sauvegardons sur ton compte <b>qu'avec ton consentement explicite</b>, donné en cochant la case prévue à la création du compte. Tu peux retirer ce consentement à tout moment en supprimant ton compte. Les autres traitements reposent sur l'exécution du contrat (CGU et, le cas échéant, abonnement) et, pour la facturation, sur nos obligations légales.</p>
+    <h3>Durée de conservation</h3>
+    <ul>
+      <li>Tes données sont conservées tant que ton compte existe, et supprimées immédiatement et définitivement quand tu supprimes ton compte.</li>
+      <li>Un compte inactif depuis 3 ans est supprimé, après un e-mail de prévenance.</li>
+      <li>Les factures sont conservées 10 ans, comme l'exige la loi.</li>
+    </ul>
     <h3>Garder ou supprimer tes données</h3>
     <ul>
-      <li><b>Sauvegarder</b> : Profil → « Sauvegarder mes données » crée un fichier sur ton téléphone. Ce fichier t'appartient : garde-le en lieu sûr.</li>
-      <li><b>Supprimer</b> : Profil → « Tout effacer », ou effacer les données du site dans les réglages de ton navigateur. Désinstaller l'appli ou vider le navigateur efface aussi tout.</li>
+      <li><b>Télécharger</b> : Profil → « Télécharger mes données » crée un fichier avec toutes tes données (droit à la portabilité).</li>
+      <li><b>Supprimer</b> : Profil → « Supprimer mon compte » efface ton compte et toutes tes données de nos serveurs. Pense à résilier ton abonnement avant.</li>
       <li>Les PDF et images créés par l'appli sont fabriqués sur ton téléphone ; ils ne passent pas par nos serveurs.</li>
     </ul>
-    <h3>Services techniques tiers</h3>
+    <h3>Prestataires (sous-traitants)</h3>
     <ul>
-      <li><b>Hébergeur (GitHub Pages)</b> : pour t'envoyer les pages, l'hébergeur reçoit ton adresse IP et des informations techniques (journaux de connexion), comme pour tout site web.</li>
+      <li><b>Supabase</b> (Supabase Inc.) : base de données et connexion par e-mail. Serveurs situés dans l'Union européenne. Un accord de traitement des données (DPA) avec clauses contractuelles types encadre le prestataire.</li>
+      <li><b>Stripe</b> (Stripe Payments Europe Ltd, Irlande) : paiement et gestion des abonnements.</li>
+      <li><b>Cloudflare</b> (Cloudflare, Inc.) : hébergement des pages de l'appli et vérification anti-robot (Turnstile) lors de la demande de code de connexion. Cloudflare reçoit ton adresse IP et des informations techniques sur ton navigateur, uniquement pour t'envoyer les pages et bloquer les robots.</li>
       <li><b>Open Food Facts</b> : quand tu scannes un code-barres ou que tu le tapes, seul ce numéro est envoyé à Open Food Facts pour trouver le produit. L'image de la caméra reste sur ton téléphone et n'est jamais enregistrée.</li>
-      <li><b>Rappels</b> : ils sont ajoutés à l'agenda de ton téléphone par un fichier que tu ouvres toi-même. Nous n'envoyons aucune notification et ne recevons aucune donnée.</li>
+      <li><b>Rappels</b> : ils sont ajoutés à l'agenda de ton téléphone par un fichier que tu ouvres toi-même. Nous n'envoyons aucune notification.</li>
       <li><b>Instagram</b> : si tu cliques sur un lien vers notre compte Instagram, tu quittes le Service et la politique de Meta s'applique.</li>
     </ul>
     <h3>Tes droits</h3>
-    <p>Conformément au RGPD et à la loi Informatique et Libertés, tu disposes d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité. Comme nous ne détenons pas tes données, tu les contrôles directement depuis l'appli. Pour toute question : <a href="mailto:yhnutrition18@gmail.com">yhnutrition18@gmail.com</a>. Tu peux aussi saisir la CNIL (cnil.fr).</p>
+    <p>Conformément au RGPD et à la loi Informatique et Libertés, tu disposes d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité, et du droit de retirer ton consentement. La plupart s'exercent directement dans l'appli (Profil). Pour toute demande : <a href="mailto:yhnutrition18@gmail.com">yhnutrition18@gmail.com</a>, réponse sous un mois. Tu peux aussi saisir la CNIL (cnil.fr).</p>
+    <h3>Sécurité</h3>
+    <p>Connexions chiffrées (HTTPS), accès à la base limité à ton propre compte, aucune donnée de carte stockée chez nous.</p>
     <h3>Responsable de traitement</h3>
     <p>Yohane Hernandez (EI, YH Nutrition), 134 traverse de la Penne, 13011 Marseille.</p>
   </section>
